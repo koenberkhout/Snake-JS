@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="css/lib/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
+
+    <!-- JS: libraries -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jcanvas.min.js"></script>
+    <script src="js/lib/topbar.min.js"></script>
+
+    <!-- Eigen JS: modulen -->
+    <script src="js/snake-graphics.js"></script>
+    <script src="js/snake-persistence.js"></script>
+    <script src="js/snake-logic.js"></script>
+    <script src="js/snake-control.js"></script>
+
+    <!-- Eigen JS: initialisatie -->
+    <script src="js/snake-init.js"></script>
+
+
+    <title>Snake - Mijn Spelletjessite</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="sitetitle"><i class="fas fa-gamepad"></i> Mijn Spelletjessite</div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Welkom</a></li>
+                    <li><a href="snake.html" class="active">Snake</a></li>
+                    <li><a href="#">Boter-kaas-eieren</a></li>
+                    <li><a href="#">Sudoku</a></li>
+                    <li><a href="#">Master mind</a></li>
+                    <li><a href="#">Galgje</a></li>
+                    <li><a href="#">Cryptogram</a></li>
+                    <li class="inloggen"><a href="#"><i class="fas fa-sign-in-alt"></i> Inloggen</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Snake</h1>
+
+        <div class="buttons" id="snakeButtons">
+            <button type="button" id="startSnake">Start</button>
+            <button type="button" id="stopSnake">Stop</button>
+        </div>
+
+        <canvas id="mySnakeCanvas" width="360" height="360"></canvas>
+
+        <div>
+            <div class="statistics">
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Gewonnen</th>
+                        <th>Verloren</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Nu:</td>
+                        <td id="wonNow">0</td>
+                        <td id="lostNow">0</td>
+                        <td>
+                            <i id="saveSnake" title="Bewaren" class="far fa-save clickable"></i>
+                            <i id="saveSnakeIndicator" style="display:none" class="fas fa-sync-alt fa-spin"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Altijd:</td>
+                        <td id="wonEver">0</td>
+                        <td id="lostEver">0</td>
+                        <td>
+                            <i id="loadSnake" title="Laden" class="fas fa-cloud-download-alt clickable"></i>
+                            <i id="loadSnakeIndicator" style="display:none" class="fas fa-sync-alt fa-spin"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlay"></div>
+</body>
+</html>
